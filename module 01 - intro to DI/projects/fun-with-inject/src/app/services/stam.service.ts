@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class StamService {
+  init() {
+    console.log('initializing stam service')
+  }
 
   constructor() { }
 }
