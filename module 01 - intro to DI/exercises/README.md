@@ -1,4 +1,4 @@
-# Exercise for module 06 - Dependency Injection and Services
+# Exercise for module 01 - Dependency Injection and Services
 
 ## Exercise 1 - Global and Local services
 
