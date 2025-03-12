@@ -1,0 +1,23 @@
+:host {
+    display: flex;
+    flex-direction: column;
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        background-color: lightblue;
+        gap: 10px;
+
+        a {
+            padding: 4px;
+            text-decoration: none;
+            color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: lightblue;
+
+            &.po {
+                background-color: rgb(131, 171, 184);
+            }
+        }
+    }
+}
