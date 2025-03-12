@@ -1,7 +1,9 @@
 import { Inject, Injectable, Optional } from "@angular/core";
 import { PREFIX_TOKEN } from "../tokens/prefix.token";
 
-@Injectable()
+@Injectable({
+    providedIn:'root'
+})
 export class HistoryService {
     readonly id = Math.ceil(Math.random() * 1000000);
     readonly records: string[] = [];

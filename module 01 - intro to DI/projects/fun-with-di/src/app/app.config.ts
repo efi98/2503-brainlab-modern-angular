@@ -19,6 +19,5 @@ export const appConfig: ApplicationConfig = {
       provide: PREFIX_TOKEN, 
       useValue: 'DEBUG'
     },
-    HistoryService
   ]
 };
