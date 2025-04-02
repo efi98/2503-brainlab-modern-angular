@@ -1,0 +1,30 @@
+:host {
+    ---selected-item-color: var(--string-selector-selected-color, lightgreen);
+
+    ---selected-color-light: hwb(from var(---selected-item-color) h 80 0);
+    ---selected-color-dark: hwb(from var(---selected-item-color) h 0 30);
+    ---selected-color-light-transparent: rgb(from var(---selected-color-light) r g b / 0.5);
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px;
+    
+    .item {
+        border: 1px solid var(---selected-color-dark);
+        padding: 2px 6px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    .item:hover {
+        background-color: var(---selected-color-light-transparent);
+    }
+    
+    .item.chosen {
+        background-color: var(---selected-color-light);
+    }
+
+}
+

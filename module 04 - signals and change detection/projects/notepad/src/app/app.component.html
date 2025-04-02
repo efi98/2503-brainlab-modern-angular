@@ -1,28 +1,16 @@
+<div class="title-area">
+    <app-title caption="Hello Notepad" [background]="selectedColor()"/>
+</div>
 <div class="colors-area">
-    @for(item of colors(); track $index) {
-        <div class="item"
-            (click)="selectColor(item)"
-            [class.chosen]="item === selectedColor()"
-        >{{item}}</div>
-    }
+    <app-string-selector [options]="colors()" [(selectedOption)]="selectedColor"/>
 </div>
 
 <div class="fonts-area">
-    @for(item of fonts(); track $index) {
-        <div class="item"
-            (click)="selectFont(item)"
-            [class.chosen]="item === selectedFont()"
-        >{{item}}</div>
-    }
+    <app-string-selector [options]="fonts()" [(selectedOption)]="selectedFont"/>
 </div>
 
 <div class="sizes-area">
-    @for(item of sizes(); track $index) {
-        <div class="item"
-            (click)="selectSize(item)"
-            [class.chosen]="item === selectedSize()"
-        >{{item}}</div>
-    }
+    <app-string-selector [options]="sizes()" [(selectedOption)]="selectedSize"/>
 </div>
 
 <div class="text-area">
