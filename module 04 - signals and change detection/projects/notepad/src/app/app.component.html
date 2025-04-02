@@ -1,34 +1,34 @@
 <div class="colors-area">
-    @for(item of colors; track $index) {
+    @for(item of colors(); track $index) {
         <div class="item"
             (click)="selectColor(item)"
-            [class.chosen]="item === selectedColor"
+            [class.chosen]="item === selectedColor()"
         >{{item}}</div>
     }
 </div>
 
 <div class="fonts-area">
-    @for(item of fonts; track $index) {
+    @for(item of fonts(); track $index) {
         <div class="item"
             (click)="selectFont(item)"
-            [class.chosen]="item === selectedFont"
+            [class.chosen]="item === selectedFont()"
         >{{item}}</div>
     }
 </div>
 
 <div class="sizes-area">
-    @for(item of sizes; track $index) {
+    @for(item of sizes(); track $index) {
         <div class="item"
             (click)="selectSize(item)"
-            [class.chosen]="item === selectedSize"
+            [class.chosen]="item === selectedSize()"
         >{{item}}</div>
     }
 </div>
 
 <div class="text-area">
     <textarea
-        [style.color]="selectedColor"
-        [style.font-family]="selectedFont"
-        [style.font-size]="selectedSize"
+        [style.color]="selectedColor()"
+        [style.font-family]="selectedFont()"
+        [style.font-size]="selectedSize()"
     ></textarea>
 </div>

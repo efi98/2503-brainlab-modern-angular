@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,25 +8,25 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   // state
-  colors: string[] = ['red', 'green', 'blue', 'purple', 'orange', 'pink', 'brown', 'black'];
-  fonts: string[] = ['Arial', 'Verdana', 'Times New Roman', 'Georgia', 'Comic Sans MS', 'Trebuchet MS', 'Courier New', 'Lucida Console'];
-  sizes: string[] = ['14px', '16px', '18px', '20px', '22px', '24px', '32px', '40px'];
+  readonly colors = signal(['red', 'green', 'blue', 'purple', 'orange', 'pink', 'brown', 'black']);
+  readonly fonts = signal(['Arial', 'Verdana', 'Times New Roman', 'Georgia', 'Comic Sans MS', 'Trebuchet MS', 'Courier New', 'Lucida Console']);
+  readonly sizes = signal(['14px', '16px', '18px', '20px', '22px', '24px', '32px', '40px']);
 
-  selectedColor: string = this.colors[0];
-  selectedFont: string = this.fonts[0];
-  selectedSize: string = this.sizes[0];
+  readonly selectedColor = signal(this.colors()[0]);
+  readonly selectedFont = signal(this.fonts()[0]);
+  readonly selectedSize = signal(this.sizes()[0]);
 
   // actions
   selectColor(value: string) {
-    this.selectedColor = value;
+    this.selectedColor.set(value);
   }
 
   selectFont(value: string) {
-    this.selectedFont = value;
+    this.selectedFont.set(value);
   }
 
   selectSize(value: string) {
-    this.selectedSize = value;
+    this.selectedSize.set(value);
   }
 
 }
