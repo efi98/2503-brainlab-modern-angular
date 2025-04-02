@@ -1,5 +1,5 @@
 :host {
-    ---selected-item-color: var(--string-selector-selected-color, lightgreen);
+    ---selected-item-color: var(--string-selector-selected-color, var(--p-5));
 
     ---selected-color-light: hwb(from var(---selected-item-color) h 80 0);
     ---selected-color-dark: hwb(from var(---selected-item-color) h 0 30);
