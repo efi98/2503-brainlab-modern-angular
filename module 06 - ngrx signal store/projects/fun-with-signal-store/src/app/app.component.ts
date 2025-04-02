@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { AppStore } from './store/app.store';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss', 
+  providers: [AppStore]
 })
 export class AppComponent {
-  title = 'fun-with-signal-store';
+  readonly store = inject(AppStore);
 }
