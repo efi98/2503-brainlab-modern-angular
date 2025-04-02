@@ -1,0 +1,26 @@
+@use 'sass:map';
+
+@mixin go() {
+    * {
+        $values: (
+            1: (l: 96.9, c: 0.02),
+            2: (l: 91.6, c: 0.057),
+            3: (l: 86.2, c: 0.097),
+            4: (l: 80.8, c: 0.096),
+            5: (l: 75.3, c: 0.096),
+            6: (l: 69.94, c:  0.101),
+            7: (l: 60.2, c: 0.126),
+            8: (l: 47.1, c: 0.149),
+            9: (l: 33.2, c: 0.143),
+            10: (l: 21.1, c: 0.091)
+          );
+        
+        
+            @each $i, $value in $values {
+            $light: map.get($value, l) / 100;
+            $chroma: map.get($value, c);
+            --p-#{$i}: oklch(from var(--base-color) #{$light} #{$chroma} h);
+          }
+    
+    }    
+}
