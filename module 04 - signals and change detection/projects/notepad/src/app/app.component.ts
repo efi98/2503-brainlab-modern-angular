@@ -6,7 +6,10 @@ import { StringSelectorComponent } from "./components/string-selector/string-sel
   selector: 'app-root',
   imports: [TitleComponent, StringSelectorComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss', 
+  host: {
+    '[style.--base-color]': 'selectedColor()'
+  }
 })
 export class AppComponent {
   // state
