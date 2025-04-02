@@ -1,6 +1,9 @@
-import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
+import { getState, patchState, signalStore, withComputed, withHooks, withMethods, withState } from '@ngrx/signals';
 import { initialAppSlice } from './app.slice';
-import { computed } from '@angular/core';
+import { computed, effect } from '@angular/core';
+import { incrementX, incrementYBy, normalize } from './app.updaters';
+import { withLocalStorage } from '../custom-features/with-local-storage.feature';
+import { updateState, withDevtools } from '@angular-architects/ngrx-toolkit';
 
 export const AppStore = signalStore(
     withState(initialAppSlice), 
@@ -10,11 +13,28 @@ export const AppStore = signalStore(
     })), 
     withMethods(store => ({
         incX: () => {
-            patchState(store, state => ({x: state.x + 1}))
+            updateState(store, 'increment x', incrementX(), normalize())
         }, 
         incY: (delta: number) => {
-            patchState(store, state => ({y: state.y +delta}))
+            updateState(store, 'increment y', incrementYBy(delta), normalize())
         }
-    }))
+    })),
+    withDevtools('xy'),
+    withLocalStorage('xy')
+
+    // withHooks(store => ({
+    //     onInit: () => {
+    //         effect(() => {
+    //             const state = getState(store);
+    //             localStorage.setItem('xy', JSON.stringify(state))
+    //         });
+
+    //         const stateText = localStorage.getItem('xy');
+    //         if (stateText !== null) {
+    //             const st = JSON.parse(stateText);
+    //             patchState(store, st);
+    //         }
+    //     }
+    // }))
 );
 
