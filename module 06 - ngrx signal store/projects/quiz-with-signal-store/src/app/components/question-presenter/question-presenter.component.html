@@ -14,6 +14,7 @@
 <div class="answers">
     @for(answer of q.answers; track $index) {
         <div class="answer" (click)="setAnswer($index)">
+            <span class="igul" [style.background]="answer"></span>
             {{$index + 1}}. {{answer}}
         </div>
     }

@@ -10,5 +10,9 @@ export class ColorQuizGeneratorService {
             map(_ => randomColorQuiz()), 
             delay(2000)
         );        
-    }    
+    }   
+    
+    createRandomQuizSync(): Question[] {
+        return randomColorQuiz();
+    }
 }
