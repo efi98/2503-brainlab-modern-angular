@@ -1,0 +1,7 @@
+@for(ans of answers(); track $index) {
+    <div
+     class="record"
+     [class.correct]="ans.isCorrect"
+     [class.wrong]="!ans.isCorrect"
+    ></div>
+}

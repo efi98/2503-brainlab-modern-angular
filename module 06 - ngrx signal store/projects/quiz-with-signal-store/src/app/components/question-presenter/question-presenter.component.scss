@@ -3,17 +3,17 @@
     flex-direction: column;
     gap: 8px;
 
+    .igul {
+        display: inline-flex;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        margin: 4px;
+    }
+
     h1 {
         color: var(--p-70);
-
-        .igul {
-            display: inline-flex;
-            border: 1px solid black;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            margin: 4px;
-        }
 }
 
     .answers {

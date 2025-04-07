@@ -1,6 +1,10 @@
-@if (store.isQuizDone()) {
-    <app-quiz-done/>
-} @else {
-    <app-question-presenter/>
-}
+<app-toolbar/>
+<div class="main">
+    @if (store.isQuizDone()) {
+        <app-quiz-done/>
+    } @else {
+        <app-status/>
+        <app-question-presenter/>
+    }    
+</div>
 

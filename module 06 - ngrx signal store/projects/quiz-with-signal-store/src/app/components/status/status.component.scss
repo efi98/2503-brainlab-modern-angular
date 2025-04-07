@@ -1,0 +1,21 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    height: 1em;
+    gap: 1px;
+
+    background-color: transparent;
+
+    .record {
+        flex: 1;
+        border: 1px solid black;
+
+        &.correct {
+            background-color: green;
+        }
+        &.wrong {
+            background-color: red;
+        }
+    }
+    
+}
