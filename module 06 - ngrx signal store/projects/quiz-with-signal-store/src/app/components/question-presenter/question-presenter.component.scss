@@ -1,0 +1,43 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h1 {
+        color: var(--p-70);
+
+        .igul {
+            display: inline-flex;
+            border: 1px solid black;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            margin: 4px;
+        }
+}
+
+    .answers {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .answer {
+            display: flex;
+            flex-direction: row;
+            gap: 4px;
+            border: 1px solid var(--p-20);
+            padding: 4px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            color: var(--p-60);
+
+
+             &:hover {
+                background-color: var(--p-10);
+             }
+
+        }
+
+    }
+}

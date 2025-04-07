@@ -1,0 +1,20 @@
+@let q = question();
+
+<h1>
+    What do you get when you mix 
+    @for (clr of q.caption; track $index) {
+        <span class="igul" [style.background]="clr"></span>
+        <span class="label">{{clr}}</span>
+        @if(!$last) {
+            , 
+        }
+    } ?
+</h1>
+
+<div class="answers">
+    @for(answer of q.answers; track $index) {
+        <div class="answer" (click)="setAnswer($index)">
+            {{$index + 1}}. {{answer}}
+        </div>
+    }
+</div>
