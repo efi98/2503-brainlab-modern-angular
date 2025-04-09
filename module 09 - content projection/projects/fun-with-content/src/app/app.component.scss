@@ -1,3 +1,21 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    .special {
+        --expander-header-color: pink;
+    }
+
+    .bla {
+        --expander-header-color: lime;
+
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
 h4 {
     color: green;
 }

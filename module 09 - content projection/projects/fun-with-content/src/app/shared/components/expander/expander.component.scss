@@ -1,4 +1,8 @@
 :host {
+    --private-header-background: var(--expander-header-color, lightblue);
+    --private-header-border-color: var(--expander-header-border-color, oklch(from var(--private-header-background) calc(l / 2) c h));
+
+
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
@@ -12,15 +16,15 @@
     .title-area {
         grid-column: 2;
         grid-row: 1;
-        background-color: lightblue;
-        border-bottom: 1px solid rgb(101, 142, 155);
+        background-color: var(--private-header-background);
+        border-bottom: 1px solid var(--private-header-border-color);
     }
 
     .button-area {
         grid-column: 1;
         grid-row: 1;
-        background-color: lightblue;
-        border-bottom: 1px solid rgb(101, 142, 155);
+        background-color: var(--private-header-background);
+        border-bottom: 1px solid var(--private-header-border-color);
     }
 
     .content-area {
