@@ -1,5 +1,5 @@
 <div class="title-area">
-  {{ title() }}
+  <ng-content select="[expander-title]"/>
 </div>
 
 @if(isOpen()) {
