@@ -1,0 +1,17 @@
+<div class="tools">
+  <input type="search" #searchBox 
+  (input)="search$.next(searchBox.value)">
+
+  @if(isBusy$ | async) {
+    <img src="spinner.gif">
+  }
+</div>
+
+<div class="results">
+  @for(clr of results$ | async; track clr.name) {
+    <div class="item" [style.backgroundColor]="clr.code">
+      {{ clr.name }}
+    </div>
+  }
+
+</div>

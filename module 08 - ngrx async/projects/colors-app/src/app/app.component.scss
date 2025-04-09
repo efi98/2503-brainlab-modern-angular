@@ -1,0 +1,32 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .tools {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        align-items: center;
+
+        img {
+            height: 1.5em;
+        }
+    }
+
+    .results {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: .5em;
+
+        .item {
+            display: flex;
+            min-width: 10em;
+            padding: 0.5em;;
+            border: 1px solid #555;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
