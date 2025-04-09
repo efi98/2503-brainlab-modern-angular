@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { ExpanderComponent } from "./shared/components/expander/expander.component";
-import { BlankComponent } from "./components/blank/blank.component";
+import { SharedModule } from './shared/components/shared.module';
 
 @Component({
   selector: 'app-root',
-  imports: [ExpanderComponent, BlankComponent],
+  imports: [SharedModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

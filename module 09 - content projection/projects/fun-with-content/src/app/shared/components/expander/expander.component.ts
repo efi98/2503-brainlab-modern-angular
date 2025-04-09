@@ -1,8 +1,8 @@
 import { Component, input, signal } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-expander',
-  imports: [],
   templateUrl: './expander.component.html',
   styleUrl: './expander.component.scss'
 })
