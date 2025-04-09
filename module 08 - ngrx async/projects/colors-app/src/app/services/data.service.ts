@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { firstValueFrom, Observable, tap } from 'rxjs';
 import { Color } from '../models/color.model';
 import { BASE_URL } from '../tokens/base-url.token';
 
@@ -15,8 +15,12 @@ export class DataService {
     console.log('Starting to search colors...', keyword);
 
     return this.http.get<Color[]>(`${this.urlBase}/colors?name_like=${keyword}`).pipe(
-      tap(res => console.log('Colors found for :', keyword)),
+      tap(_ => console.log('Colors found for :', keyword)),
     );
+  }
+
+  searchColorsAsync(keyword: string): Promise<Color[]> {
+    return firstValueFrom(this.searchColors(keyword));
   }
 
   constructor() { }
