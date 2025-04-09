@@ -1,0 +1,8 @@
+@if (hasExpander) {
+    @if (expanderOn()) {
+        <ng-content select="[expander-open]"/>
+    } @else {
+        <ng-content select="[expander-close]"/>
+    }
+}
+<ng-content></ng-content>
