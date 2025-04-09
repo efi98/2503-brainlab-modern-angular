@@ -1,0 +1,19 @@
+<div class="title-area">
+  {{ title() }}
+</div>
+
+@if(isOpen()) {
+<div class="content-area">
+  <ng-content/>
+</div>
+}
+
+<div class="button-area">
+    <button (click)="toggle()">
+        @if(isOpen()) {
+            -
+        } @else {
+            +
+        }
+    </button>
+</div>
