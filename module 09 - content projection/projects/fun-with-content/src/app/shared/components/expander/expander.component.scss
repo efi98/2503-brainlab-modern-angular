@@ -1,0 +1,39 @@
+:host {
+    --private-header-background: var(--expander-header-color, lightblue);
+    --private-header-border-color: var(--expander-header-border-color, oklch(from var(--private-header-background) calc(l / 2) c h));
+
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 0.3);
+
+    .title-area, .button-area, .content-area {
+        padding: 4px;
+    }
+
+    .title-area {
+        grid-column: 2;
+        grid-row: 1;
+        background-color: var(--private-header-background);
+        border-bottom: 1px solid var(--private-header-border-color);
+    }
+
+    .button-area {
+        grid-column: 1;
+        grid-row: 1;
+        background-color: var(--private-header-background);
+        border-bottom: 1px solid var(--private-header-border-color);
+    }
+
+    .content-area {
+        grid-row: 2;
+        grid-column: 1 / -1;
+    }
+
+}
+
+h4 {
+    color: magenta;
+}

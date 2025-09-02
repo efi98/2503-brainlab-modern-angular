@@ -1,0 +1,41 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    .special {
+        --expander-header-color: pink;
+    }
+
+    .bla {
+        --expander-header-color: lime;
+
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+h4 {
+    color: green;
+}
+
+img {
+    max-height: 1.5em;
+
+    &.sunset {
+        max-height: 10em;
+    }
+}
+
+.first-button {
+    background-color: aqua;
+    color: rgb(44, 76, 76);
+    border: 1px solid rgb(34, 121, 121);
+}
+
+.second-button {
+    background-color: rgb(236, 186, 220);
+    color: rgb(127, 34, 116);
+    border: 1px solid rgb(200, 91, 187);
+}

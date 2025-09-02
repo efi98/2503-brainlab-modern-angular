@@ -1,0 +1,17 @@
+<div class="tools">
+  <input type="search" #searchBox 
+  (input)="store.searchColors(searchBox.value)">
+
+  @if(store.isBusy()) {
+    <img src="spinner.gif">
+  }
+</div>
+
+<div class="results">
+  @for(clr of store.results(); track clr.name) {
+    <div class="item" [style.backgroundColor]="clr.code">
+      {{ clr.name }}
+    </div>
+  }
+
+</div>

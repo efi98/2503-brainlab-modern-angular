@@ -1,0 +1,23 @@
+<div class="title-area">
+  <ng-content select="[expander-title]"/>
+</div>
+
+@if(isOpen()) {
+<div class="content-area">
+  <ng-content/>
+</div>
+}
+
+<div class="button-area">
+  @if(toggleExists()) {
+    <ng-content select="[expander-toggle]" (click)="toggle()"/>
+  } @else {
+    <button (click)="toggle()">
+        @if(isOpen()) {
+            -
+        } @else {
+            +
+        }
+    </button>
+  }
+</div>
